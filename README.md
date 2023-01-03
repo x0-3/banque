@@ -1,5 +1,6 @@
 # banque
-
+ 
+Projet PHP orienté objet permettant de gérer des titulaires et leurs comptes bancaires respectifs.
 
 <br/>  
 
