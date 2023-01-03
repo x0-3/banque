@@ -51,7 +51,7 @@ class Titulaire {
         return $dif;
     }
 
-    //to string method
+    //to string method writes name, age and city
     public function __toString(){ //changer date de naissance par l'age
         return "Nom: {$this->nom} <br> 
         Prénom: {$this->prénom} <br> 
