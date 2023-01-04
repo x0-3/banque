@@ -33,28 +33,29 @@ class Titulaire {
 
     // function to store account into a table
     public function addCompte(CompteBancaire $compteBancaire){
-        $this->compte[]=$compteBancaire;
+        $this-> compte[] = $compteBancaire;
     }
 
     // function to show the account of a user
     public function afficherCompte(){
-        foreach($this->compte as $compteBancaire)
+        foreach($this-> compte as $compteBancaire)
         echo $compteBancaire;
     }
 
     //  age function 
     public function age(){
         $date= new DateTime();
-        $birthday= new DateTime($this->get_dateNaissance());
-        $dif= $birthday->diff($date)->format("%Y ans");
+        $birthday= new DateTime($this-> get_dateNaissance());
+        $dif= $birthday->diff($date)-> format("%Y ans");
         return $dif;
     }
 
     // to string method writes name, age and city
-    public function __toString(){ //changer date de naissance par l'age
-        return "Nom: {$this->nom} <br> 
-        Prénom: {$this->prénom} <br> 
-        Age: {$this->age()} <br> 
-        Ville: {$this->ville} <br>";
+    public function __toString(){ // changer date de naissance par l'age
+        return "Nom: {$this-> nom} <br> 
+        Prénom: {$this-> prénom} <br> 
+        Age: {$this-> age()} <br> 
+        Ville: {$this-> ville} <br>";
     }
 }
+

@@ -13,7 +13,7 @@ class CompteBancaire {
         $this-> solde = $solde;
         $this-> devise = $devise;
         $this-> titulaire = $titulaire;
-        $titulaire->addCompte($this);//declare a function that is written in Titulaire.php
+        $titulaire-> addCompte($this);//declare a function that is written in Titulaire.php
     }
 
     // get functions
@@ -35,13 +35,12 @@ class CompteBancaire {
     // débiter
     public function débiter($montant) {
         $this->solde -= $montant;
-        
     }
 
     // virement
     public function  virement($montant, $destination){
-        $this->débiter($montant);
-        $destination->crediter($montant);
+        $this-> débiter($montant);
+        $destination-> crediter($montant);
     }
 
     // to string method writes name of the account, amount on it and the currency
