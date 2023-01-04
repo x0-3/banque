@@ -1,13 +1,13 @@
 <?php
 
 class CompteBancaire {
-    //Attribute
+    // Attribute
     private $libellé;
     private $solde;
     private $devise;
     private Titulaire $titulaire;
 
-    //magic method __construct
+    // magic method __construct
     public function __construct($libellé, $solde, $devise, Titulaire $titulaire){
         $this-> libellé = $libellé;
         $this-> solde = $solde;
@@ -16,7 +16,7 @@ class CompteBancaire {
         $titulaire->addCompte($this);//declare a function that is written in Titulaire.php
     }
 
-    //get functions
+    // get functions
     public function get_Libelle(){
         return $this-> libellé;
     }
@@ -27,23 +27,24 @@ class CompteBancaire {
         return $this-> devise;
     }
 
-    //créditer
+    // créditer
     public function crediter($montant) {
         $this->solde += $montant;
     }
 
-    //débiter
+    // débiter
     public function débiter($montant) {
         $this->solde -= $montant;
         
     }
 
-    //virement
-    // public function  virement($montant){
+    // virement
+    public function  virement($montant, $destination){
+        $this->débiter($montant);
+        $destination->crediter($montant);
+    }
 
-    // }
-
-    //to string method writes name of the account, amount on it and the currency
+    // to string method writes name of the account, amount on it and the currency
     public function __toString(){
         return "{$this-> libellé}: {$this-> solde} {$this-> devise} <br>";
     }

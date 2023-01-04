@@ -1,24 +1,23 @@
 <?php
 
 class Titulaire {
-    //Attribute
+    // Attribute
     private $nom;
     private $prénom;
     private $dateNaissance;
     private $ville;
     private array $compte;
 
-    //magic method __construct
+    // magic method __construct
     public function __construct($nom, $prénom, $dateNaissance, $ville){
         $this-> nom = $nom;
         $this-> prénom = $prénom;
         $this-> dateNaissance = $dateNaissance;
         $this-> ville = $ville;
         $this-> compte = [];
-
     }
 
-    //get functions
+    // get functions
     public function get_Nom(){
         return $this-> nom;
     }
@@ -32,12 +31,12 @@ class Titulaire {
         return $this-> ville;
     }
 
-    //function to store account into a table
+    // function to store account into a table
     public function addCompte(CompteBancaire $compteBancaire){
         $this->compte[]=$compteBancaire;
     }
 
-    //function 
+    // function to show the account of a user
     public function afficherCompte(){
         foreach($this->compte as $compteBancaire)
         echo $compteBancaire;
@@ -51,7 +50,7 @@ class Titulaire {
         return $dif;
     }
 
-    //to string method writes name, age and city
+    // to string method writes name, age and city
     public function __toString(){ //changer date de naissance par l'age
         return "Nom: {$this->nom} <br> 
         Prénom: {$this->prénom} <br> 
