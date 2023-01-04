@@ -3,18 +3,18 @@
 class Titulaire {
     // Attribute
     private $nom;
-    private $prénom;
+    private $prenom;
     private $dateNaissance;
     private $ville;
-    private array $compte;
+    private array $comptes;
 
     // magic method __construct
-    public function __construct($nom, $prénom, $dateNaissance, $ville){
+    public function __construct($nom, $prenom, $dateNaissance, $ville){
         $this-> nom = $nom;
-        $this-> prénom = $prénom;
+        $this-> prenom = $prenom;
         $this-> dateNaissance = $dateNaissance;
         $this-> ville = $ville;
-        $this-> compte = [];
+        $this-> comptes = [];
     }
 
     // get functions
@@ -22,7 +22,7 @@ class Titulaire {
         return $this-> nom;
     }
     public function get_Prenom(){
-        return $this-> prénom;
+        return $this-> prenom;
     }
     public function get_dateNaissance(){
         return $this-> dateNaissance;
@@ -31,14 +31,28 @@ class Titulaire {
         return $this-> ville;
     }
 
+    //setter
+    public function set_Nom(){
+        $this-> nom;
+    }
+    public function set_Prenom(){
+        $this-> prenom;
+    }
+    public function set_dateNaissance(){
+        $this-> dateNaissance;
+    }
+    public function set_Ville(){
+        $this-> ville;
+    }
+
     // function to store account into a table
-    public function addCompte(CompteBancaire $compteBancaire){
-        $this-> compte[] = $compteBancaire;
+    public function addComptes(CompteBancaire $compteBancaire){
+        $this-> comptes[] = $compteBancaire;
     }
 
     // function to show the account of a user
     public function afficherCompte(){
-        foreach($this-> compte as $compteBancaire)
+        foreach($this-> comptes as $compteBancaire)
         echo $compteBancaire;
     }
 
@@ -53,9 +67,8 @@ class Titulaire {
     // to string method writes name, age and city
     public function __toString(){ // changer date de naissance par l'age
         return "Nom: {$this-> nom} <br> 
-        Prénom: {$this-> prénom} <br> 
+        Prénom: {$this-> prenom} <br> 
         Age: {$this-> age()} <br> 
         Ville: {$this-> ville} <br>";
     }
 }
-

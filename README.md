@@ -1,6 +1,6 @@
 # banque
  
-Projet PHP orienté objet permettant de gérer des titulaires et leurs comptes bancaires respectifs Avec la possibiliter de créditer et débiter une somme du compte des titulaires.
+Projet PHP orienté objet permettant de gérer des titulaires et leurs comptes bancaires respectifs Avec la possibilité de créditer, débiter une somme du compte des titulaires et d'effectuer des transactions entre différents titulaires.
 
 <br/>  
 
